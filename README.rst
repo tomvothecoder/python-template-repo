@@ -201,7 +201,7 @@ Here's an example of GitHub Actions in "action": https://github.com/tomvothecode
 
 *To save time and resources on build cycles, GitHub Actions has been configured to
 automatically skip jobs instead of re-executing based on the files that are committed. For
-example, if docs are committed, then the unit tests will not run.*
+example, if docs are committed then the unit tests will not run.*
 
 Additional Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
