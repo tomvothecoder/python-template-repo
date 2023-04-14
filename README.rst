@@ -173,13 +173,14 @@ Information on QA tools:
   for more important matters".
 - `isort`_ - isort is a Python utility / library to sort imports alphabetically, and
   automatically separated into sections and by type.
-- `flake8`_ - A Python linter for enforcing a style guide with PEP (Python Enhancement
-  Proposals).
+- `flake8`_ - A Python linter that checks Python code for style and syntax errors, and
+  for enforcing a style guide with `PEP (Python Enhancement Proposals)`_.
 
 .. _pre-commit: https://pre-commit.com/
 .. _black: https://black.readthedocs.io/en/stable/
 .. _isort: https://pycqa.github.io/isort/
 .. _flake8: https://flake8.pycqa.org/en/latest/
+.. _PEP (Python Enhancement Proposals): https://peps.python.org/pep-0000/
 
 Helpful Knowledge
 -----------------
@@ -195,6 +196,8 @@ Jobs include:
 1. Run ``pre-commit`` for formatting, linting, and type checking
 2. Build conda CI/CD environment with different Python versions, build and install
    the package, and run unit test suite with ``pytest``
+
+Here's an example of GitHub Actions in "action": https://github.com/tomvothecoder/python-template-repo/actions
 
 *To save time and resources on build cycles, GitHub Actions has been configured to
 automatically skip jobs instead of re-executing based on the files that are committed. For
