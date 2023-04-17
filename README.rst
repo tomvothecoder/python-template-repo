@@ -2,12 +2,24 @@ Python Template Repo
 ====================
 
 Python Template Repo aims to help you **quickly jumpstart new Python libraries with
-integrated developer tooling**. Try this template out if you intend on **distributing
-your Python library as an open-source Anaconda package** and **don't want to deal with
-the repository infrastructure**!
+with integrated developer tooling to develop high quality and robust software.**
+If you want to focus on developing open-source software without dedicating significant
+time and effort on repo setup, try this template out!
 
 Simply follow the "Getting Started" guides below. It is also easily configurable based
 on your library's needs.
+
+Motivation
+----------
+
+This template was driven from the desire to reduce the complexities in setting up and
+distributing Python libraries developed by the LLNL Climate Program. It is based on the
+common system design pattern integrated in `E3SM Project`_ post-processing tools
+(e3sm_diags, zppy, zstash, polaris), `xCDAT`_, and `PCMDI Metrics`_.
+
+.. _`E3SM Project`: https://github.com/E3SM-Project
+.. _`xCDAT`: https://github.com/xCDAT/xcdat
+.. _`PCMDI Metrics`: https://github.com/PCMDI/pcmdi_metrics
 
 Features
 --------
@@ -83,7 +95,8 @@ The library's documentation is setup with `Sphinx`_ and `Read the Docs Sphinx Th
 You just need to do a few things to get up and running:
 
 1. Update ``README.rst``, ``AUTHORS.rst``, ``HISTORY.rst``, and ``/docs/index.rst`` as needed
-2. Decide how to deploy the documentation. Follow the instructions in the provided links.
+2. Decide how to deploy the documentation. This step is left up to you based on your needs.
+   Follow the instructions in the provided links.
 
    - Option 1: `Read the Docs`_
    - Option 2: `GitHub Pages`_ (via GitHub Actions)
@@ -184,6 +197,16 @@ Information on QA tools:
 
 Helpful Knowledge
 -----------------
+
+Reminder to Routinely Maintain the Software Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is generally good practice to maintain your software infrastructure. Here is a
+routine software maintenance checklist. I recommend doing these before every new
+software version release.
+
+1. Maintain conda environment dependencies in `.yml` files
+2. Update `pre-commit` hooks in `.pre-commit-config.yml`
 
 How GitHub Actions is Used for CI/CD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
