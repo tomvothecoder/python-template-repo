@@ -2,12 +2,27 @@ Python Template Repo
 ====================
 
 Python Template Repo aims to help you **quickly jumpstart new Python libraries with
-integrated developer tooling**. Try this template out if you intend on **distributing
-your Python library as an open-source Anaconda package** and **don't want to deal with
-the repository infrastructure**!
+integrated developer tooling to efficiently develop high quality and robust software.**
+If you want to focus on developing open-source software without dedicating significant
+time and effort on repo setup, try this template out!
 
 Simply follow the "Getting Started" guides below. It is also easily configurable based
 on your library's needs.
+
+Motivation
+----------
+
+This template was driven from the desire to reduce the overhead in setting up and
+maintaining Python libraries that follow software engineering practices (e.g., code
+styling, unit testing, documentation). The target audience was originally developers
+from the E3SM Project and LLNL Climate Program, but it can be used by anyone in the
+open-source community!
+
+The template is based on a common system design pattern integrated in `E3SM Project`_ post-processing tools (e3sm_diags, zppy, zstash, polaris), `xCDAT`_, and `PCMDI Metrics`_.
+
+.. _`E3SM Project`: https://github.com/E3SM-Project
+.. _`xCDAT`: https://github.com/xCDAT/xcdat
+.. _`PCMDI Metrics`: https://github.com/PCMDI/pcmdi_metrics
 
 Features
 --------
@@ -83,7 +98,8 @@ The library's documentation is setup with `Sphinx`_ and `Read the Docs Sphinx Th
 You just need to do a few things to get up and running:
 
 1. Update ``README.rst``, ``AUTHORS.rst``, ``HISTORY.rst``, and ``/docs/index.rst`` as needed
-2. Decide how to deploy the documentation. Follow the instructions in the provided links.
+2. Decide how to deploy the documentation. This step is left up to you based on your needs.
+   Follow the instructions in the provided links.
 
    - Option 1: `Read the Docs`_
    - Option 2: `GitHub Pages`_ (via GitHub Actions)
@@ -111,10 +127,9 @@ To build the documentation locally (useful for reviewing):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This repository includes quality assurance (QA) tools for code formatting (``black``,
-``isort``), linting (``flake8``), and unit testing (``pytest``). These tools ensure
-that you can easily catch issues and follow good Python practices without sacrificing
-energy on them. These tools are integrated in the `pre-commit`_ package as "hooks" that
-automatically run when committing changes to files.
+``isort``), linting (``flake8``), unit testing (``pytest``), and optional static type
+checking (``mypy``). These tools ensure that you can easily catch issues and follow good
+Python practices without sacrificing energy on them. These tools are integrated in the `pre-commit`_ package as "hooks" that automatically run when committing changes to files.
 
 To run these QA tools through ``pre-commit``:
 
@@ -175,15 +190,48 @@ Information on QA tools:
   automatically separated into sections and by type.
 - `flake8`_ - A Python linter that checks Python code for style and syntax errors, and
   for enforcing a style guide with `PEP (Python Enhancement Proposals)`_.
+- `mypy`_ (enable in ``pre-commit-config.yaml``) - A static type checker for Python.
+  "Type  checkers help ensure that you’re using variables and functions in your code
+  correctly. With mypy, add type hints (PEP 484) to your Python programs, and mypy will
+  warn you when you use those types incorrectly."
 
 .. _pre-commit: https://pre-commit.com/
 .. _black: https://black.readthedocs.io/en/stable/
 .. _isort: https://pycqa.github.io/isort/
 .. _flake8: https://flake8.pycqa.org/en/latest/
+.. _mypy: https://mypy.readthedocs.io/en/stable/
 .. _PEP (Python Enhancement Proposals): https://peps.python.org/pep-0000/
+
+
+5. Decide How to Distribute Software on Anaconda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are several ways of distributing software on Anaconda including:
+
+1. Using `conda-forge`_ (recommended)
+2. Managing your own `Anaconda channel`_ and uploading packages there
+
+I recommend using `conda-forge`. "conda-forge is a GitHub organization containing
+repositories of conda recipes. Thanks to some awesome continuous integration providers
+(AppVeyor, Azure Pipelines, CircleCI and TravisCI), each repository, also known as a
+feedstock, automatically builds its own recipe in a clean and repeatable way on Windows,
+Linux and OSX.""
+
+.. _`conda-forge`: https://conda-forge.org/
+.. _`Anaconda channel`: https://docs.anaconda.com/navigator/tutorials/manage-channels/
 
 Helpful Knowledge
 -----------------
+
+Reminder to Routinely Maintain the Software Infrastructure
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+It is generally good practice to maintain your software infrastructure. Here is a
+routine software maintenance checklist. I recommend doing these before every new
+software version release.
+
+1. Maintain conda environment dependencies in `.yml` files
+2. Update `pre-commit` hooks in `.pre-commit-config.yml`
 
 How GitHub Actions is Used for CI/CD
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,4 +257,6 @@ Additional Configuration
 - Feel free to modify the configuration for QA tools in ``pyproject.toml`` and ``setup.cfg``
 - You can also remove some or all the QA tools if you want (not recommended though).
   Just make sure to delete them from your Anaconda ``.yml`` files and remove their entries
-  in ``pre-commit-config.yaml`` and their configs in ``pyproject.toml`` and/or ``setup.cfg``
+  in ``pre-commit-config.yaml`` and their configs in ``pyproject.toml`` and/or ``setup.cfg``.
+- `mypy` is disabled by default with `pre-commit`. Enable `mypy` by uncommenting the
+  lines related lines in ``pre-commit-config.yaml``.
