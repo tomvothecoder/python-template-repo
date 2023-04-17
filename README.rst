@@ -202,6 +202,24 @@ Information on QA tools:
 .. _mypy: https://mypy.readthedocs.io/en/stable/
 .. _PEP (Python Enhancement Proposals): https://peps.python.org/pep-0000/
 
+
+5. Decide How to Distribute on Anaconda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There are several ways of distributing on Anaconda including:
+
+1. Using `conda-forge`_ (recommended)
+2. Managing your own `Anaconda channel`_ and uploading packages there
+
+I recommend using `conda-forge`. "conda-forge is a GitHub organization containing
+repositories of conda recipes. Thanks to some awesome continuous integration providers
+(AppVeyor, Azure Pipelines, CircleCI and TravisCI), each repository, also known as a
+feedstock, automatically builds its own recipe in a clean and repeatable way on Windows,
+Linux and OSX.""
+
+.. _`conda-forge`: https://conda-forge.org/
+.. _`Anaconda channel`: https://docs.anaconda.com/navigator/tutorials/manage-channels/
+
 Helpful Knowledge
 -----------------
 
