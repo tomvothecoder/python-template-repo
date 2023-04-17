@@ -2,7 +2,7 @@ Python Template Repo
 ====================
 
 Python Template Repo aims to help you **quickly jumpstart new Python libraries with
-with integrated developer tooling to develop high quality and robust software.**
+integrated developer tooling to efficiently develop high quality and robust software.**
 If you want to focus on developing open-source software without dedicating significant
 time and effort on repo setup, try this template out!
 
@@ -12,10 +12,13 @@ on your library's needs.
 Motivation
 ----------
 
-This template was driven from the desire to reduce the complexities in setting up and
-distributing Python libraries developed by the LLNL Climate Program. It is based on the
-common system design pattern integrated in `E3SM Project`_ post-processing tools
-(e3sm_diags, zppy, zstash, polaris), `xCDAT`_, and `PCMDI Metrics`_.
+This template was driven from the desire to reduce the overhead in setting up and
+maintaining Python libraries that follow software engineering practices (e.g., code
+styling, unit testing, documentation). The target audience was originally developers
+from the E3SM Project and LLNL Climate Program, but it can be used by anyone in the
+open-source community!
+
+The template is based on a common system design pattern integrated in `E3SM Project`_ post-processing tools (e3sm_diags, zppy, zstash, polaris), `xCDAT`_, and `PCMDI Metrics`_.
 
 .. _`E3SM Project`: https://github.com/E3SM-Project
 .. _`xCDAT`: https://github.com/xCDAT/xcdat
@@ -124,10 +127,9 @@ To build the documentation locally (useful for reviewing):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This repository includes quality assurance (QA) tools for code formatting (``black``,
-``isort``), linting (``flake8``), and unit testing (``pytest``). These tools ensure
-that you can easily catch issues and follow good Python practices without sacrificing
-energy on them. These tools are integrated in the `pre-commit`_ package as "hooks" that
-automatically run when committing changes to files.
+``isort``), linting (``flake8``), unit testing (``pytest``), and optional static type
+checking (``mypy``). These tools ensure that you can easily catch issues and follow good
+Python practices without sacrificing energy on them. These tools are integrated in the `pre-commit`_ package as "hooks" that automatically run when committing changes to files.
 
 To run these QA tools through ``pre-commit``:
 
@@ -188,11 +190,16 @@ Information on QA tools:
   automatically separated into sections and by type.
 - `flake8`_ - A Python linter that checks Python code for style and syntax errors, and
   for enforcing a style guide with `PEP (Python Enhancement Proposals)`_.
+- `mypy`_ - A static type checker for Python. "Type checkers help ensure that you’re
+  using variables and functions in your code correctly. With mypy, add type hints (PEP
+  484) to your Python programs, and mypy will warn you when you use those types
+  incorrectly."
 
 .. _pre-commit: https://pre-commit.com/
 .. _black: https://black.readthedocs.io/en/stable/
 .. _isort: https://pycqa.github.io/isort/
 .. _flake8: https://flake8.pycqa.org/en/latest/
+.. _mypy: https://mypy.readthedocs.io/en/stable/
 .. _PEP (Python Enhancement Proposals): https://peps.python.org/pep-0000/
 
 Helpful Knowledge
