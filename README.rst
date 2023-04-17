@@ -203,10 +203,10 @@ Information on QA tools:
 .. _PEP (Python Enhancement Proposals): https://peps.python.org/pep-0000/
 
 
-5. Decide How to Distribute on Anaconda
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5. Decide How to Distribute Software on Anaconda
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There are several ways of distributing on Anaconda including:
+There are several ways of distributing software on Anaconda including:
 
 1. Using `conda-forge`_ (recommended)
 2. Managing your own `Anaconda channel`_ and uploading packages there
