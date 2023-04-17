@@ -14,7 +14,7 @@ dependencies:
     # ==========================================
     # Quality Assurance - for linting and formatting
     # ==========================================
-      # NOTE: If versions are updated, also update 'rev' in `.pre-commit.config.yaml`
+    # NOTE: If versions are updated, also update 'rev' in `.pre-commit.config.yaml`
     - black=23.1.0
     - flake8=6.0.0
     - flake8-isort=6.0.0
