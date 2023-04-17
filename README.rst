@@ -190,10 +190,10 @@ Information on QA tools:
   automatically separated into sections and by type.
 - `flake8`_ - A Python linter that checks Python code for style and syntax errors, and
   for enforcing a style guide with `PEP (Python Enhancement Proposals)`_.
-- `mypy`_ - A static type checker for Python. "Type checkers help ensure that you’re
-  using variables and functions in your code correctly. With mypy, add type hints (PEP
-  484) to your Python programs, and mypy will warn you when you use those types
-  incorrectly."
+- `mypy`_ (enable in ``pre-commit-config.yaml``) - A static type checker for Python.
+  "Type  checkers help ensure that you’re using variables and functions in your code
+  correctly. With mypy, add type hints (PEP 484) to your Python programs, and mypy will
+  warn you when you use those types incorrectly."
 
 .. _pre-commit: https://pre-commit.com/
 .. _black: https://black.readthedocs.io/en/stable/
@@ -257,4 +257,6 @@ Additional Configuration
 - Feel free to modify the configuration for QA tools in ``pyproject.toml`` and ``setup.cfg``
 - You can also remove some or all the QA tools if you want (not recommended though).
   Just make sure to delete them from your Anaconda ``.yml`` files and remove their entries
-  in ``pre-commit-config.yaml`` and their configs in ``pyproject.toml`` and/or ``setup.cfg``
+  in ``pre-commit-config.yaml`` and their configs in ``pyproject.toml`` and/or ``setup.cfg``.
+- `mypy` is disabled by default with `pre-commit`. Enable `mypy` by uncommenting the
+  lines related lines in ``pre-commit-config.yaml``.
