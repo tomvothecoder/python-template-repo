@@ -97,7 +97,7 @@ The library's documentation is setup with `Sphinx`_ and `Read the Docs Sphinx Th
 
 You just need to do a few things to get up and running:
 
-1. Update ``README.rst``, ``AUTHORS.rst``, ``HISTORY.rst``, and ``/docs/index.rst`` as needed
+1. Update ``README.rst``, ``AUTHORS.rst``, ``HISTORY.rst``, ``/docs/index.rst``, and ``/docs/conf.py`` as needed
 2. Decide how to deploy the documentation. This step is left up to you based on your needs.
    Follow the instructions in the provided links.
 
